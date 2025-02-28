@@ -1,0 +1,92 @@
+/* 样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 整体容器 */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 左侧功能按钮栏 */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* 保持垂直排列 */
+    justify-content: flex-start;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 左侧按钮栏的按钮修改为水平排列 */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;  /* 水平排列 */
+    flex-direction: column;  /* 纵向排列按钮 */
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #444;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #555;
+}
+
+/* 右侧操作区 */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.section {
+    display: none;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
