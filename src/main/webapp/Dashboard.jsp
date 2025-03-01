@@ -6,13 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    HttpSession session1 = request.getSession(false);
-    if(session1 == null || session1.getAttribute("LoggedIn") == null){
-        response.sendRedirect("/");
-        return;
-    }
-%>
+<%--<%--%>
+<%--    HttpSession session1 = request.getSession(false);--%>
+<%--    if(session1 == null || session1.getAttribute("LoggedIn") == null){--%>
+<%--        response.sendRedirect("/");--%>
+<%--        return;--%>
+<%--    }--%>
+<%--%>--%>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -39,14 +39,22 @@
     <div class="main-content">
         <!-- 新增人员操作区 -->
         <div id="add" class="section">
-            <h3>新增人员</h3>
+            <h3 align="center">新增人员</h3>
             <form>
                 <label for="name">姓名:</label>
                 <input type="text" id="name" name="name"><br><br>
+                <label for="gender">性别:</label>
+                <input type="text" id="gender" name="gender"><br><br>
                 <label for="age">年龄:</label>
                 <input type="number" id="age" name="age"><br><br>
-                <label for="position">职位:</label>
-                <input type="text" id="position" name="position"><br><br>
+                <label for="birth">生日:</label>
+                <input type="date" id="birth" name="birth"><br><br>
+                <label for="email">邮箱:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="phone">手机:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+                <label for="poli_look">政治面貌:</label>
+                <input type="text" id="poli_look" name="poli_look"><br><br>
                 <button type="submit">提交</button>
             </form>
         </div>
