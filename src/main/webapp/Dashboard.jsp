@@ -38,8 +38,8 @@
     <!-- 右侧操作区 -->
     <div class="main-content">
         <!-- 新增人员操作区 -->
-        <div id="add" class="section">
-            <h3 align="center">新增人员</h3>
+        <div id="add" class="section" style="display:none;">
+            <h3 class="h3">新增人员</h3>
             <form>
                 <label for="name">姓名:</label>
                 <input type="text" id="name" name="name"><br><br>
@@ -61,7 +61,7 @@
 
         <!-- 查看人员操作区 -->
         <div id="view" class="section" style="display:none;">
-            <h3>查看人员</h3>
+            <h3 class="h3">查看人员</h3>
             <table>
                 <tr>
                     <th>姓名</th>
@@ -83,7 +83,7 @@
 
         <!-- 编辑人员操作区 -->
         <div id="edit" class="section" style="display:none;">
-            <h3>编辑人员</h3>
+            <h3 class="h3">编辑人员</h3>
             <form>
                 <label for="editName">姓名:</label>
                 <input type="text" id="editName" name="editName"><br><br>
@@ -97,7 +97,7 @@
 
         <!-- 删除人员操作区 -->
         <div id="delete" class="section" style="display:none;">
-            <h3>删除人员</h3>
+            <h3 class="h3">删除人员</h3>
             <form>
                 <label for="deleteName">姓名:</label>
                 <input type="text" id="deleteName" name="deleteName"><br><br>
