@@ -21,7 +21,6 @@ public class LoginServlet extends HttpServlet {
         }
         String dbPassword = UserService.selectUser(username).getPassword();
         if (dbPassword.equals(password)) {
-            System.out.println("yes");
             HttpSession session = req.getSession();
             session.setAttribute("LoggedIn", username);
             resp.sendRedirect("Dashboard.jsp");

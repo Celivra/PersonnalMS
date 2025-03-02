@@ -40,20 +40,20 @@
         <!-- 新增人员操作区 -->
         <div id="add" class="section" style="display:none;">
             <h3 class="h3">新增人员</h3>
-            <form>
-                <label for="name">姓名:</label>
+            <form action="addperson" method="post">
+                <label for="name" class="h3label">姓名:</label>
                 <input type="text" id="name" name="name"><br><br>
-                <label for="gender">性别:</label>
+                <label for="gender" class="h3label">性别:</label>
                 <input type="text" id="gender" name="gender"><br><br>
-                <label for="age">年龄:</label>
+                <label for="age" class="h3label">年龄:</label>
                 <input type="number" id="age" name="age"><br><br>
-                <label for="birth">生日:</label>
-                <input type="date" id="birth" name="birth"><br><br>
-                <label for="email">邮箱:</label>
+                <label for="birth" class="h3label">生日:</label>
+                <input type="date" id="birth" name="birth" class="h3label"><br><br>
+                <label for="email" class="h3label">邮箱:</label>
                 <input type="text" id="email" name="email"><br><br>
-                <label for="phone">手机:</label>
+                <label for="phone" class="h3label">手机:</label>
                 <input type="text" id="phone" name="phone"><br><br>
-                <label for="poli_look">政治面貌:</label>
+                <label for="poli_look" class="h3label">政治面貌:</label>
                 <input type="text" id="poli_look" name="poli_look"><br><br>
                 <button type="submit">提交</button>
             </form>
@@ -85,11 +85,11 @@
         <div id="edit" class="section" style="display:none;">
             <h3 class="h3">编辑人员</h3>
             <form>
-                <label for="editName">姓名:</label>
+                <label for="editName" class="h3label">姓名:</label>
                 <input type="text" id="editName" name="editName"><br><br>
-                <label for="editAge">年龄:</label>
+                <label for="editAge" class="h3label">年龄:</label>
                 <input type="number" id="editAge" name="editAge"><br><br>
-                <label for="editPosition">职位:</label>
+                <label for="editPosition" class="h3label">职位:</label>
                 <input type="text" id="editPosition" name="editPosition"><br><br>
                 <button type="submit">提交</button>
             </form>
@@ -99,7 +99,7 @@
         <div id="delete" class="section" style="display:none;">
             <h3 class="h3">删除人员</h3>
             <form>
-                <label for="deleteName">姓名:</label>
+                <label for="deleteName" class="h3label">姓名:</label>
                 <input type="text" id="deleteName" name="deleteName"><br><br>
                 <button type="submit">删除</button>
             </form>
