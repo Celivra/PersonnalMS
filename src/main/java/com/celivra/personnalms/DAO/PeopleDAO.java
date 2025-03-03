@@ -38,9 +38,6 @@ public class PeopleDAO {
                 people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
                         rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8));
             }
-            connection.close();
-            ps.close();
-            rs.close();
             return people;
         }catch (SQLException e){
             e.printStackTrace();
@@ -58,8 +55,17 @@ public class PeopleDAO {
             ps.setString(6, people.getPhone());
             ps.setString(7, people.getPolilook());
             ps.executeUpdate();
-            connection.close();
-            ps.close();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean removeById(String id) {
+        String sql = "DELETE FROM people WHERE id = ?";
+        try(PreparedStatement ps = connection.prepareStatement(sql)){
+            ps.setString(1, id);
+            ps.executeUpdate();
             return true;
         }catch (SQLException e){
             e.printStackTrace();
@@ -74,8 +80,6 @@ public class PeopleDAO {
             while(rs.next()){
                 peoples.add(new People(rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8)));
             }
-            connection.close();
-            ps.close();
         }catch (SQLException e){
             e.printStackTrace();
         }

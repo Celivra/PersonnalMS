@@ -1,5 +1,7 @@
-package com.celivra.personnalms.util;
+package com.celivra.personnalms;
 
+import com.celivra.personnalms.Entity.People;
+import com.celivra.personnalms.Service.PeopleService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +12,8 @@ import java.io.IOException;
 public class DeletePeople extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("DeleteID");
-        System.out.println(id);
+        String id = req.getParameter("deleteID");
+        PeopleService.removeById(id);
+        resp.sendRedirect("/Dashboard.jsp");
     }
 }

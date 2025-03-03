@@ -16,6 +16,9 @@ public class PeopleService {
     public static boolean insert(People people){
         return peopleDAO.insert(people);
     }
+    public static boolean removeById(String id){
+        return peopleDAO.removeById(id);
+    }
     public static List<People> findAll() {
         return peopleDAO.findAll();
     }
