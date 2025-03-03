@@ -86,7 +86,7 @@ public class People {
         return phone;
     }
 
-    public String getPoli_look() {
+    public String getPolilook() {
         return poli_look;
     }
 

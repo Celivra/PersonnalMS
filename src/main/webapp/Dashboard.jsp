@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.celivra.personnalms.Entity.People" %>
+<%@ page import="com.celivra.personnalms.Service.PeopleService" %><%--
   Created by IntelliJ IDEA.
   User: xiaozhai
   Date: 2025/2/27
@@ -65,19 +67,31 @@
             <table>
                 <tr>
                     <th>姓名</th>
+                    <th>性别</th>
                     <th>年龄</th>
-                    <th>职位</th>
+                    <th>生日</th>
+                    <th>邮箱</th>
+                    <th>手机号</th>
+                    <th>政治面貌</th>
                 </tr>
+                <%!
+                    List<People> peopleList = PeopleService.findAll();
+                %>
+                <%
+                    for(People i:peopleList){
+                %>
                 <tr>
-                    <td>张三</td>
-                    <td>28</td>
-                    <td>经理</td>
+                    <td><%=i.getName()%></td>
+                    <td><%=i.getGender()%></td>
+                    <td><%=i.getAge()%></td>
+                    <td><%=i.getBirth()%></td>
+                    <td><%=i.getEmail()%></td>
+                    <td><%=i.getPhone()%></td>
+                    <td><%=i.getPolilook()%></td>
                 </tr>
-                <tr>
-                    <td>李四</td>
-                    <td>35</td>
-                    <td>技术主管</td>
-                </tr>
+                <%
+                    }
+                %>
             </table>
         </div>
 
