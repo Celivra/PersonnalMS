@@ -5,6 +5,11 @@ function showSection(section) {
         section.style.display = 'none';
     });
 
+    const sections2 = document.querySelectorAll('.section2');
+    sections2.forEach(function(section) {
+        section.style.display = 'none';
+    });
+
     // 显示选中的功能区
     const selectedSection = document.getElementById(section);
     selectedSection.style.display = 'block';

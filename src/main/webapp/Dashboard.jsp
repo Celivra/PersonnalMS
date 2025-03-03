@@ -32,7 +32,6 @@
         <ul>
             <li id="btnAdd" onclick="showSection('add')">新增人员</li>
             <li id="btnView" onclick="showSection('view')">查看人员</li>
-<%--            <li id="btnEdit" onclick="showSection('edit')">编辑人员</li>--%>
             <li id="btnDelete" onclick="showSection('delete')">删除人员</li>
         </ul>
     </div>
@@ -62,7 +61,7 @@
         </div>
 
         <!-- 查看人员操作区 -->
-        <div id="view" class="section" style="display:none;">
+        <div id="view" class="section2" style="display:none;">
             <% List<People> peopleList = PeopleService.findAll();%>
             <h3 class="h3">查看人员</h3>
             <table>
@@ -75,6 +74,7 @@
                     <th>邮箱</th>
                     <th>手机号</th>
                     <th>政治面貌</th>
+                    <th>操作</th>
                 </tr>
                 <%for(People i:peopleList){%>
                 <tr>
@@ -86,24 +86,11 @@
                     <td><%=i.getEmail()%></td>
                     <td><%=i.getPhone()%></td>
                     <td><%=i.getPolilook()%></td>
+                    <td><button class="editButton">编辑</button></td>
                 </tr>
                 <% } %>
             </table>
         </div>
-
-        <!-- 编辑人员操作区 -->
-<%--        <div id="edit" class="section" style="display:none;">--%>
-<%--            <h3 class="h3">编辑人员</h3>--%>
-<%--            <form>--%>
-<%--                <label for="editName" class="h3label">姓名:</label>--%>
-<%--                <input type="text" id="editName" name="editName"><br><br>--%>
-<%--                <label for="editAge" class="h3label">年龄:</label>--%>
-<%--                <input type="number" id="editAge" name="editAge"><br><br>--%>
-<%--                <label for="editPosition" class="h3label">职位:</label>--%>
-<%--                <input type="text" id="editPosition" name="editPosition"><br><br>--%>
-<%--                <button type="submit">提交</button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
 
         <!-- 删除人员操作区 -->
         <div id="delete" class="section" style="display:none;">
