@@ -61,6 +61,24 @@ public class PeopleDAO {
             return false;
         }
     }
+    public boolean update(People people) {
+        String sql = "update people set name=?, gender=?, age=?, birth=?, email=?, phone=?, poli_look=? where id=?";
+        try(PreparedStatement ps = connection.prepareStatement(sql)){
+            ps.setString(1, people.getName());
+            ps.setString(2, people.getGender());
+            ps.setString(3, people.getAge());
+            ps.setString(4, people.getBirth());
+            ps.setString(5, people.getEmail());
+            ps.setString(6, people.getPhone());
+            ps.setString(7, people.getPolilook());
+            ps.setString(8, people.getId());
+            ps.executeUpdate();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
     public boolean removeById(String id) {
         String sql = "DELETE FROM people WHERE id = ?";
         try(PreparedStatement ps = connection.prepareStatement(sql)){

@@ -1,6 +1,5 @@
 package com.celivra.personnalms;
 
-import com.celivra.personnalms.Entity.People;
 import com.celivra.personnalms.Service.PeopleService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

@@ -21,7 +21,15 @@
         <servlet-name>removeperson</servlet-name>
         <servlet-class>com.celivra.personnalms.DeletePeople</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateperson</servlet-name>
+        <servlet-class>com.celivra.personnalms.UpdatePeople</servlet-class>
+    </servlet>
 <!--    servlet mapping area    -->
+    <servlet-mapping>
+        <servlet-name>updateperson</servlet-name>
+        <url-pattern>/updateperson</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>removeperson</servlet-name>
         <url-pattern>/removeperson</url-pattern>

@@ -86,11 +86,47 @@
                     <td><%=i.getEmail()%></td>
                     <td><%=i.getPhone()%></td>
                     <td><%=i.getPolilook()%></td>
-                    <td><button class="editButton">编辑</button></td>
+                    <td>
+                        <button class="editButton"
+                            data-id="<%= i.getId() %>"
+                            data-name="<%= i.getName() %>"
+                            data-gender="<%= i.getGender() %>"
+                            data-age="<%= i.getAge() %>"
+                            data-birth="<%= i.getBirth() %>"
+                            data-email="<%= i.getEmail() %>"
+                            data-phone="<%= i.getPhone() %>"
+                            data-poli_look="<%= i.getPolilook() %>">
+                            编辑
+                        </button>
+                    </td>
                 </tr>
                 <% } %>
             </table>
         </div>
+
+        <!-- 编辑人员操作区 -->
+        <div id="edit" class="section" style="display:none;">
+            <h3 class="h3">编辑人员</h3>
+            <form action="updateperson" method="post">
+                <input type="hidden" id="editId" name="id">
+                <label for="editName" class="h3label">姓名:</label>
+                <input type="text" id="editName" name="name"><br><br>
+                <label for="editGender" class="h3label">性别:</label>
+                <input type="text" id="editGender" name="gender"><br><br>
+                <label for="editAge" class="h3label">年龄:</label>
+                <input type="number" id="editAge" name="age"><br><br>
+                <label for="editBirth" class="h3label">生日:</label>
+                <input type="date" id="editBirth" name="birth" class="h3label"><br><br>
+                <label for="editEmail" class="h3label">邮箱:</label>
+                <input type="text" id="editEmail" name="email"><br><br>
+                <label for="editPhone" class="h3label">手机:</label>
+                <input type="text" id="editPhone" name="phone"><br><br>
+                <label for="editPoliLook" class="h3label">政治面貌:</label>
+                <input type="text" id="editPoliLook" name="poli_look"><br><br>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+
 
         <!-- 删除人员操作区 -->
         <div id="delete" class="section" style="display:none;">
