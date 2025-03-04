@@ -21,7 +21,7 @@ public class UpdatePeople extends HttpServlet {
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String poli_look = req.getParameter("poli_look");
-        People person = new People(id, name, gender, age, birth, email, phone, poli_look);
+        People person = new People(id, name, gender, birth, email, phone, poli_look);
         PeopleService.update(person);
         resp.sendRedirect("/Dashboard.jsp");
     }
