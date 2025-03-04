@@ -8,13 +8,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%--%>
-<%--    HttpSession session1 = request.getSession(false);--%>
-<%--    if(session1 == null || session1.getAttribute("LoggedIn") == null){--%>
-<%--        response.sendRedirect("/");--%>
-<%--        return;--%>
-<%--    }--%>
-<%--%>--%>
+<%
+    HttpSession session1 = request.getSession(false);
+    if(session1 == null || session1.getAttribute("LoggedIn") == null){
+        response.sendRedirect("/");
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -46,8 +46,8 @@
                 <input type="text" id="name" name="name"><br><br>
                 <label for="gender" class="h3label">性别:</label>
                 <input type="text" id="gender" name="gender"><br><br>
-                <label for="age" class="h3label">年龄:</label>
-                <input type="number" id="age" name="age"><br><br>
+<%--                <label for="age" class="h3label">年龄:</label>--%>
+<%--                <input type="number" id="age" name="age"><br><br>--%>
                 <label for="birth" class="h3label">生日:</label>
                 <input type="date" id="birth" name="birth" class="h3label"><br><br>
                 <label for="email" class="h3label">邮箱:</label>
@@ -113,8 +113,8 @@
                 <input type="text" id="editName" name="name"><br><br>
                 <label for="editGender" class="h3label">性别:</label>
                 <input type="text" id="editGender" name="gender"><br><br>
-                <label for="editAge" class="h3label">年龄:</label>
-                <input type="number" id="editAge" name="age"><br><br>
+<%--                <label for="editAge" class="h3label">年龄:</label>--%>
+<%--                <input type="number" id="editAge" name="age"><br><br>--%>
                 <label for="editBirth" class="h3label">生日:</label>
                 <input type="date" id="editBirth" name="birth" class="h3label"><br><br>
                 <label for="editEmail" class="h3label">邮箱:</label>

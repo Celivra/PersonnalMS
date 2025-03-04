@@ -1,4 +1,3 @@
-<%@ page import="com.celivra.personnalms.Entity.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -42,7 +41,8 @@
         }else if(session1.getAttribute("NotPassword") != null){
             mySession = "NotPassword";
         }
-        System.out.println(mySession);
+//        System.out.println(mySession);
+        session1.removeAttribute(mySession);
     %>
     showText('<%=mySession%>')
 </script>
