@@ -12,10 +12,10 @@ public class People {
     public People(String name, String gender, String birth, String email, String phone, String poli_look) {
         this.name = name;
         this.gender = gender;
-        this.birth = birth;
+        this.birth = SafeDate(birth);
         this.age = String.valueOf(calculateAge(this.birth));
         this.email = email;
-        this.phone = phone;
+        this.phone = SafePhone(phone);
         this.poli_look = poli_look;
     }
 
@@ -23,11 +23,28 @@ public class People {
         this.id = id;
         this.name = name;
         this.gender = gender;
-        this.birth = birth;
+        this.birth = SafeDate(birth);
         this.age = String.valueOf(calculateAge(this.birth));
         this.email = email;
-        this.phone = phone;
+        this.phone = SafePhone(phone);
         this.poli_look = poli_look;
+    }
+    private String SafeDate(String date) {
+        String[] birthDates = date.split("-");
+        if(birthDates[0].length() >= 5) {
+            date= birthDates[0].substring(0,4)+"-"+birthDates[1]+"-"+birthDates[2];
+            System.out.println("birthDateStr: " + date);
+        }
+        return date;
+    }
+    private String SafePhone(String phone) {
+        StringBuilder safePhone = new StringBuilder(phone);
+        for (int i = 0; i < safePhone.length(); i++) {
+            if (!Character.isDigit(safePhone.charAt(i))) {
+                safePhone.setCharAt(i, '0'); // 直接修改
+            }
+        }
+        return safePhone.toString();
     }
     //日期轉年齡
     private int calculateAge(String birthDateStr) {
@@ -38,7 +55,9 @@ public class People {
         // 3. 获取当前日期
         LocalDate currentDate = LocalDate.now();
         // 4. 计算年龄
-        return Period.between(birthDate, currentDate).getYears();
+        int age = Period.between(birthDate, currentDate).getYears();
+
+        return Math.max(age, 0);
     }
 
     public void setId(String id) {

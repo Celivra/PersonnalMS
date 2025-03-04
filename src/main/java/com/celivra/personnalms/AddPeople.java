@@ -13,14 +13,13 @@ public class AddPeople extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String gender = req.getParameter("gender");
-//        String age = req.getParameter("age");
         String birth = req.getParameter("birth");
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String poli_look = req.getParameter("poli_look");
 
         People people = new People(name, gender, birth, email, phone, poli_look);
-        //PeopleService.insert(people);
+        PeopleService.insert(people);
         resp.sendRedirect("/Dashboard.jsp");
     }
 }

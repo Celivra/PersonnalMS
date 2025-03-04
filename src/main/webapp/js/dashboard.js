@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const id = this.getAttribute("data-id");
             const name = this.getAttribute("data-name");
             const gender = this.getAttribute("data-gender");
-            // const age = this.getAttribute("data-age");
             const birth = this.getAttribute("data-birth");
             const email = this.getAttribute("data-email");
             const phone = this.getAttribute("data-phone");
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("editId").value = id;
             document.getElementById("editName").value = name;
             document.getElementById("editGender").value = gender;
-            // document.getElementById("editAge").value = age;
             document.getElementById("editBirth").value = birth;
             document.getElementById("editEmail").value = email;
             document.getElementById("editPhone").value = phone;

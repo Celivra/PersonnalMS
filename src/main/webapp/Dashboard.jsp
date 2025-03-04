@@ -10,11 +10,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     HttpSession session1 = request.getSession(false);
-    if(session1 == null || session1.getAttribute("LoggedIn") == null){
-        response.sendRedirect("/");
-        return;
-    }
 %>
+<%--<%--%>
+<%--    if(session1 == null || session1.getAttribute("LoggedIn") == null){--%>
+<%--        response.sendRedirect("/");--%>
+<%--        return;--%>
+<%--    }--%>
+<%--%>--%>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -23,6 +25,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人员管理</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <!-- 引入 Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- 引入 Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 <body>
 <div class="container">
@@ -43,19 +50,18 @@
             <h3 class="h3">新增人员</h3>
             <form action="addperson" method="post">
                 <label for="name" class="h3label">姓名:</label>
-                <input type="text" id="name" name="name"><br><br>
+                <input type="text" id="name" name="name" maxlength="200"><br><br>
                 <label for="gender" class="h3label">性别:</label>
-                <input type="text" id="gender" name="gender"><br><br>
-<%--                <label for="age" class="h3label">年龄:</label>--%>
-<%--                <input type="number" id="age" name="age"><br><br>--%>
-                <label for="birth" class="h3label">生日:</label>
-                <input type="date" id="birth" name="birth" class="h3label"><br><br>
+                <input type="text" id="gender" name="gender" maxlength="10"><br><br>
+                <label for="datepicker" class="h3label">生日:</label>
+                <input type="text" id="datepicker" placeholder="请选择日期">
+<%--                <input type="date" id="birth" name="birth" class="h3label"><br><br>--%>
                 <label for="email" class="h3label">邮箱:</label>
-                <input type="text" id="email" name="email"><br><br>
+                <input type="text" id="email" name="email" maxlength="200"><br><br>
                 <label for="phone" class="h3label">手机:</label>
-                <input type="text" id="phone" name="phone"><br><br>
+                <input type="text" id="phone" name="phone" maxlength="11"><br><br>
                 <label for="poli_look" class="h3label">政治面貌:</label>
-                <input type="text" id="poli_look" name="poli_look"><br><br>
+                <input type="text" id="poli_look" name="poli_look" maxlength="500"><br><br>
                 <button type="submit">提交</button>
             </form>
         </div>
@@ -113,10 +119,9 @@
                 <input type="text" id="editName" name="name"><br><br>
                 <label for="editGender" class="h3label">性别:</label>
                 <input type="text" id="editGender" name="gender"><br><br>
-<%--                <label for="editAge" class="h3label">年龄:</label>--%>
-<%--                <input type="number" id="editAge" name="age"><br><br>--%>
-                <label for="editBirth" class="h3label">生日:</label>
-                <input type="date" id="editBirth" name="birth" class="h3label"><br><br>
+                <label for="datepicker" class="h3label">生日:</label>
+                <input type="text" id="datepicker" placeholder="请选择日期">
+<%--                <input type="date" id="editBirth" name="birth" class="h3label"><br><br>--%>
                 <label for="editEmail" class="h3label">邮箱:</label>
                 <input type="text" id="editEmail" name="email"><br><br>
                 <label for="editPhone" class="h3label">手机:</label>
@@ -141,5 +146,23 @@
 </div>
 
 <script src="js/dashboard.js"></script>
+<script>
+    flatpickr("#datepicker", {
+        dateFormat: "Y-m-d", // 设置日期格式
+        minDate: "today", // 设置最小日期为今天
+        maxDate: "2025-12-31", // 设置最大日期
+    });
+    <%
+        if(session1.getAttribute("DeleteError") != null){
+            session1.removeAttribute("DeleteError");
+    %>
+            alert("没有找到任何人");
+    <%
+        } else if(session1.getAttribute("DeleteComplete") != null){
+            session1.removeAttribute("DeleteComplete");
+    %>
+            alert("删除成功");
+    <%  } %>
+</script>
 </body>
 </html>
