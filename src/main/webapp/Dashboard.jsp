@@ -11,12 +11,12 @@
 <%
     HttpSession session1 = request.getSession(false);
 %>
-<%--<%--%>
-<%--    if(session1 == null || session1.getAttribute("LoggedIn") == null){--%>
-<%--        response.sendRedirect("/");--%>
-<%--        return;--%>
-<%--    }--%>
-<%--%>--%>
+<%
+    if(session1 == null || session1.getAttribute("LoggedIn") == null){
+        response.sendRedirect("/");
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -53,9 +53,8 @@
                 <input type="text" id="name" name="name" maxlength="200"><br><br>
                 <label for="gender" class="h3label">性别:</label>
                 <input type="text" id="gender" name="gender" maxlength="10"><br><br>
-                <label for="datepicker" class="h3label">生日:</label>
-                <input type="text" id="datepicker" placeholder="请选择日期">
-<%--                <input type="date" id="birth" name="birth" class="h3label"><br><br>--%>
+                <label for="birth" class="h3label">生日:</label>
+                <input type="date" id="birth" name="birth" class="h3label"><br><br>
                 <label for="email" class="h3label">邮箱:</label>
                 <input type="text" id="email" name="email" maxlength="200"><br><br>
                 <label for="phone" class="h3label">手机:</label>
@@ -119,9 +118,8 @@
                 <input type="text" id="editName" name="name"><br><br>
                 <label for="editGender" class="h3label">性别:</label>
                 <input type="text" id="editGender" name="gender"><br><br>
-                <label for="datepicker" class="h3label">生日:</label>
-                <input type="text" id="datepicker" placeholder="请选择日期">
-<%--                <input type="date" id="editBirth" name="birth" class="h3label"><br><br>--%>
+                <label for="editBirth" class="h3label">生日:</label>
+                <input type="date" id="editBirth" name="birth" class="h3label"><br><br>
                 <label for="editEmail" class="h3label">邮箱:</label>
                 <input type="text" id="editEmail" name="email"><br><br>
                 <label for="editPhone" class="h3label">手机:</label>
