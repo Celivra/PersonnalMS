@@ -6,20 +6,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
+import com.celivra.personnalms.Entity.User;
 
 public class LoginServlet extends HttpServlet {
+    static User loginUser = null;
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        if(UserService.selectUser(username) == null){
+        loginUser = UserService.selectUser(username);
+        if(loginUser == null){
             HttpSession session = req.getSession();
             session.setAttribute("UserNotFound", true);
             resp.sendRedirect("/");
             return;
         }
-        String dbPassword = UserService.selectUser(username).getPassword();
+        String dbPassword = loginUser.getPassword();
         if (dbPassword.equals(password)) {
             HttpSession session = req.getSession();
             session.setAttribute("LoggedIn", username);
@@ -29,5 +31,8 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("NotPassword", true);
             resp.sendRedirect("/");
         }
+    }
+    public static String getLoggedUser() {
+        return loginUser.getUsername();
     }
 }

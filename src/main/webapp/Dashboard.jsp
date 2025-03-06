@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.celivra.personnalms.Entity.People" %>
-<%@ page import="com.celivra.personnalms.Service.PeopleService" %><%--
+<%@ page import="com.celivra.personnalms.Service.PeopleService" %>
+<%@ page import="com.celivra.personnalms.LoginServlet" %><%--
   Created by IntelliJ IDEA.
   User: xiaozhai
   Date: 2025/2/27
@@ -37,14 +38,20 @@
     <div class="sidebar">
         <h2>功能菜单</h2>
         <ul>
-            <li id="btnAdd" onclick="showSection('add')">新增人员</li>
-            <li id="btnView" onclick="showSection('view')">查看人员</li>
-            <li id="btnDelete" onclick="showSection('delete')">删除人员</li>
+            <li id="btnAdd" class="pressBtn" onclick="showSection('add')">新增人员</li>
+            <li id="btnView" class="pressBtn" onclick="showSection('view')">查看人员</li>
+            <li id="btnDelete" class="pressBtn" onclick="showSection('delete')">删除人员</li>
+            <li id="LoginOut" class="loginOut" onclick="loginOut()">登出</li>
         </ul>
     </div>
 
     <!-- 右侧操作区 -->
     <div class="main-content">
+        <div class="main-bottom">
+            &nbsp; &nbsp;
+            <%=LoginServlet.getLoggedUser()%>
+            &nbsp; &nbsp;
+        </div>
         <!-- 新增人员操作区 -->
         <div id="add" class="section" style="display:none;">
             <h3 class="h3">新增人员</h3>

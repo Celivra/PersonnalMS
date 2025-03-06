@@ -33,9 +33,9 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
-
-.sidebar ul li {
+.pressBtn{
     padding: 10px;
     margin: 10px 0;
     background-color: #444;
@@ -44,9 +44,20 @@
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
-.sidebar ul li:hover {
+.pressBtn:hover{
     background-color: #555;
+}
+.loginOut{
+    padding: 10px;
+    margin-top: auto;
+    background-color: #444;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.loginOut:hover{
+    background-color: #000;
 }
 
 /* 右侧操作区 */
@@ -146,4 +157,21 @@ input[type="text"]:focus, input[type="number"]:focus {
 .editButton{
     background-color: #007bff;
     width: 50px;
+}
+.main-bottom{
+    position: absolute;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    color: #ddd;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+.main-bottom:hover{
+    background-color: #555;
 }

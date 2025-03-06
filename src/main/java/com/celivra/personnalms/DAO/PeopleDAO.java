@@ -1,6 +1,7 @@
 package com.celivra.personnalms.DAO;
 
 import com.celivra.personnalms.Entity.People;
+import com.celivra.personnalms.LoginServlet;
 import com.celivra.personnalms.util.DBUtil;
 
 import java.sql.Connection;
@@ -20,7 +21,7 @@ public class PeopleDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
-                        rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8));
+                        rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9));
             }
             return people;
         }catch (SQLException e){
@@ -36,7 +37,7 @@ public class PeopleDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
-                       rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8));
+                       rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9));
             }
             return people;
         }catch (SQLException e){
@@ -45,7 +46,7 @@ public class PeopleDAO {
         }
     }
     public boolean insert(People people) {
-        String sql = "insert into people(name, gender, age, birth, email, phone, poli_look) values(?,?,?,?,?,?,?)";
+        String sql = "insert into people(name, gender, age, birth, email, phone, poli_look, creator) values(?,?,?,?,?,?,?,?)";
         try(PreparedStatement ps = connection.prepareStatement(sql)){
             ps.setString(1, people.getName());
             ps.setString(2, people.getGender());
@@ -54,6 +55,7 @@ public class PeopleDAO {
             ps.setString(5, people.getEmail());
             ps.setString(6, people.getPhone());
             ps.setString(7, people.getPolilook());
+            ps.setString(8, LoginServlet.getLoggedUser());
             ps.executeUpdate();
             return true;
         }catch (SQLException e){
@@ -91,12 +93,13 @@ public class PeopleDAO {
         }
     }
     public List<People> findAll() {
-        String sql = "SELECT * FROM people";
+        String sql = "SELECT * FROM people where creator = ?";
         List<People> peoples = new ArrayList<>();
         try(PreparedStatement ps = connection.prepareStatement(sql)){
+            ps.setString(1,LoginServlet.getLoggedUser());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                peoples.add(new People(rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8)));
+                peoples.add(new People(rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9)));
             }
         }catch (SQLException e){
             e.printStackTrace();

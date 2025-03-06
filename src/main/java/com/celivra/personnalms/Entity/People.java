@@ -5,11 +5,11 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class People {
-    private String id ,name ,gender ,age ,birth ,email ,phone ,poli_look;
+    private String id ,name ,gender ,age ,birth ,email ,phone ,poli_look, creator;
 
     public People() {}
 
-    public People(String name, String gender, String birth, String email, String phone, String poli_look) {
+    public People(String name, String gender, String birth, String email, String phone, String poli_look, String creator) {
         this.name = name;
         this.gender = gender;
         this.birth = SafeDate(birth);
@@ -17,9 +17,10 @@ public class People {
         this.email = email;
         this.phone = SafePhone(phone);
         this.poli_look = poli_look;
+        this.creator = creator;
     }
 
-    public People(String id, String name, String gender, String birth, String email, String phone, String poli_look) {
+    public People(String id, String name, String gender, String birth, String email, String phone, String poli_look, String creator) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -28,8 +29,10 @@ public class People {
         this.email = email;
         this.phone = SafePhone(phone);
         this.poli_look = poli_look;
+        this.creator = creator;
     }
     private String SafeDate(String date) {
+        if(date == null) return date;
         String[] birthDates = date.split("-");
         if(birthDates[0].length() >= 5) {
             date= birthDates[0].substring(0,4)+"-"+birthDates[1]+"-"+birthDates[2];

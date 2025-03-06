@@ -43,3 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+function loginOut(){
+    window.location.href = "loginOut"
+}
