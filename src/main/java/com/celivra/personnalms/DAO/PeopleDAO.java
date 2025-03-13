@@ -47,6 +47,23 @@ public class PeopleDAO {
             return null;
         }
     }
+    public People findByUserName(String name) {
+        People people = null;
+        String sql = "SELECT * FROM people WHERE username= ?";
+        try(PreparedStatement ps = connection.prepareStatement(sql)){
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
+                        rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9),
+                        rs.getString(10), rs.getString(11));
+            }
+            return people;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
     public boolean insert(People people) {
         String sql = "insert into people(name, gender, age, birth, email, phone, poli_look, creator) values(?,?,?,?,?,?,?,?)";
         try(PreparedStatement ps = connection.prepareStatement(sql)){

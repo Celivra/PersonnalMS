@@ -38,7 +38,7 @@
     <div class="sidebar">
         <h2>功能菜单</h2>
         <ul>
-            <li id="btnAdd" class="pressBtn" onclick="showSection('add')">新增人员</li>
+            <li id="btnAdd" class="pressBtn" onclick="showSection('add')">手動添加人員</li>
             <li id="btnView" class="pressBtn" onclick="showSection('view')">查看人员</li>
             <li id="btnDelete" class="pressBtn" onclick="showSection('delete')">删除人员</li>
             <li id="LoginOut" class="loginOut" onclick="loginOut()">登出</li>
@@ -54,10 +54,14 @@
         </div>
         <!-- 新增人员操作区 -->
         <div id="add" class="section" style="display:none;">
-            <h3 class="h3">新增人员</h3>
+            <h3 class="h3">手動添加人員</h3>
             <form action="addperson" method="post">
                 <label for="name" class="h3label">姓名:</label>
                 <input type="text" id="name" name="name" maxlength="200"><br><br>
+                <label for="username" class="h3label">用戶名:</label>
+                <input type="text" id="username" name="username" placeholder="這是獨一無二的" maxlength="200"><br><br>
+                <label for="password" class="h3label">密碼:</label>
+                <input type="password" id="password" name="password"maxlength="200"><br><br>
                 <label for="gender" class="h3label">性别:</label>
                 <input type="text" id="gender" name="gender" maxlength="10"><br><br>
                 <label for="birth" class="h3label">生日:</label>

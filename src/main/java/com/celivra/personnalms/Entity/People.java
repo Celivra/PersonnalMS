@@ -68,6 +68,14 @@ public class People {
         return Math.max(age, 0);
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -98,6 +106,18 @@ public class People {
 
     public void setPoli_look(String poli_look) {
         this.poli_look = poli_look;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getId() {

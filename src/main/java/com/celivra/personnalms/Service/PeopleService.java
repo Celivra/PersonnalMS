@@ -13,6 +13,9 @@ public class PeopleService {
     public static People findByName(String name) {
         return peopleDAO.findByName(name);
     }
+    public static People findByUserName(String name) {
+        return peopleDAO.findByUserName(name);
+    }
     public static boolean insert(People people){
         return peopleDAO.insert(people);
     }
