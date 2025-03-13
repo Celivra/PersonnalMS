@@ -21,7 +21,8 @@ public class PeopleDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
-                        rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9));
+                        rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9),
+                        rs.getString(10), rs.getString(11));
             }
             return people;
         }catch (SQLException e){
@@ -37,7 +38,8 @@ public class PeopleDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 people = new People(rs.getString(1), rs.getString(2),rs.getString(3),
-                       rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9));
+                       rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9),
+                        rs.getString(10), rs.getString(11));
             }
             return people;
         }catch (SQLException e){
@@ -99,7 +101,8 @@ public class PeopleDAO {
             ps.setString(1,LoginServlet.getLoggedUser());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                peoples.add(new People(rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9)));
+                peoples.add(new People(rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8), rs.getString(9),
+                        rs.getString(10), rs.getString(11)));
             }
         }catch (SQLException e){
             e.printStackTrace();

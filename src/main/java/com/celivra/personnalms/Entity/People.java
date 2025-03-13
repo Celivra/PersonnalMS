@@ -6,10 +6,11 @@ import java.time.format.DateTimeFormatter;
 
 public class People {
     private String id ,name ,gender ,age ,birth ,email ,phone ,poli_look, creator;
+    private String username, password;
 
     public People() {}
 
-    public People(String name, String gender, String birth, String email, String phone, String poli_look, String creator) {
+    public People(String name, String gender, String birth, String email, String phone, String poli_look, String creator, String username, String password) {
         this.name = name;
         this.gender = gender;
         this.birth = SafeDate(birth);
@@ -18,9 +19,11 @@ public class People {
         this.phone = SafePhone(phone);
         this.poli_look = poli_look;
         this.creator = creator;
+        this.username = username;
+        this.password = password;
     }
 
-    public People(String id, String name, String gender, String birth, String email, String phone, String poli_look, String creator) {
+    public People(String id, String name, String gender, String birth, String email, String phone, String poli_look, String creator, String username, String password) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -30,6 +33,8 @@ public class People {
         this.phone = SafePhone(phone);
         this.poli_look = poli_look;
         this.creator = creator;
+        this.username = username;
+        this.password = password;
     }
     private String SafeDate(String date) {
         if(date == null) return date;

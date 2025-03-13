@@ -41,7 +41,6 @@
         }else if(session1.getAttribute("NotPassword") != null){
             mySession = "NotPassword";
         }
-//        System.out.println(mySession);
         session1.removeAttribute(mySession);
     %>
     showText('<%=mySession%>')

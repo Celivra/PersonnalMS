@@ -17,8 +17,10 @@ public class AddPeople extends HttpServlet {
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String poli_look = req.getParameter("poli_look");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
 
-        People people = new People(name, gender, birth, email, phone, poli_look, LoginServlet.getLoggedUser());
+        People people = new People(name, gender, birth, email, phone, poli_look, LoginServlet.getLoggedUser(), username, password );
         PeopleService.insert(people);
         resp.sendRedirect("/Dashboard.jsp");
     }
