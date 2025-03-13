@@ -59,7 +59,7 @@
                 <label for="name" class="h3label">姓名:</label>
                 <input type="text" id="name" name="name" maxlength="200"><br><br>
                 <label for="username" class="h3label">用戶名:</label>
-                <input type="text" id="username" name="username" placeholder="這是獨一無二的" maxlength="200"><br><br>
+                <input type="text" id="username" name="username" maxlength="200"><br><br>
                 <label for="password" class="h3label">密碼:</label>
                 <input type="password" id="password" name="password"maxlength="200"><br><br>
                 <label for="gender" class="h3label">性别:</label>
