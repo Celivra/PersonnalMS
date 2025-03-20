@@ -14,7 +14,7 @@
   <title>人員注册</title>
   <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
+<body background="img/bg.png">
 
 <div class="container">
   <h2>用户注册</h2>
@@ -41,7 +41,6 @@
     <div class="input-group">
       <label for="gender">性別</label>
       <input type="text" id="gender" name="gender" maxlength="10"><br><br>
-      <input>
     </div>
     <div class="input-group">
       <label for="birth" class="h3label">生日:</label>

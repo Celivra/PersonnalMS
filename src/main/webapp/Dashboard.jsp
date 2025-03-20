@@ -32,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 </head>
-<body>
+<body background="img/dashboardbg.png">
 <div class="container">
     <!-- 左侧功能按钮栏 -->
     <div class="sidebar">

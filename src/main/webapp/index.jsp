@@ -8,7 +8,7 @@
     <title>登入</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
+<body background="img/bg.png">
 <div class="login-container">
     <h2>登入</h2>
     <p id="hiddenText" class="error_text"></p>
