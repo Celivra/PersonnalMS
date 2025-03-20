@@ -54,6 +54,9 @@ public class LoginServlet extends HttpServlet {
         }
     }
     public static String getLoggedUser() {
-        return loginUser.getUsername();
+        if(loginUser != null){
+            return loginUser.getUsername();
+        }
+        return loginPeople.getName();
     }
 }
